@@ -17,8 +17,32 @@
               name="line" class="form-control" 
               id="line" #line="ngModel"
               [(ngModel)]="model.line"
-              required>
-            </div>
+              >
+           </div>
+
+
+
+          <u class="listLink" *ngIf="!isSelected" (click)="onClick()">You want to choose from the list...?</u>
+          <div *ngIf="isSelected" class="form-group">
+            <label for="selected"> Please select the line from here</label>
+            <br>
+              <mat-form-field>
+                <!-- <mat-label>List of lines</mat-label> -->
+                <mat-select name="selected" 
+                
+                id="selected"
+                #line2="ngModel"
+                [(ngModel)]="model.selected"
+                >
+                  <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+
+          <br>
+          <br>
 
 
             <button type="submit" 
@@ -34,3 +58,8 @@
       <a routerLink="/">Back to the previous page</a>
     
   </div>
+
+
+<hr>
+
+

@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './main-page/main-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
+import {MatSelectModule} from '@angular/material/select';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -15,6 +18,8 @@ import { SearchPageComponent } from './search-page/search-page.component';
   imports: [
     BrowserModule,
     FormsModule,
+    MatSelectModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       {
         path: '',

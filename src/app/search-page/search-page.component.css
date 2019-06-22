@@ -18,3 +18,9 @@ p.explanation-text {
     position:  relative;        /* 位置調整 */
     font-weight:  normal;       /* 文字の太さ調整 */
 }
+
+
+.listLink {
+    cursor: pointer;
+    cursor: hand;
+}
