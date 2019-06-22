@@ -6,25 +6,28 @@
 
 <p class="explanation-text">
   You will be able to search the spefic line and list up the restaurant on the line.
+  <br>
+  ** Please note that you can only search Tokyo area!
 </p>
 
   <div>
 
       <form (ngSubmit)="onSubmit(lineForm)" #lineForm="ngForm">
           <div class="form-group">
-              <label for="line"> Please enter the line you would like to take? : </label>
+              <label for="line"> - Please enter the line you would like to take? : </label>
               <input type="text" 
               name="line" class="form-control" 
               id="line" #line="ngModel"
               [(ngModel)]="model.line"
+              required
               >
            </div>
 
 
 
-          <u class="listLink" *ngIf="!isSelected" (click)="onClick()">You want to choose from the list...?</u>
+          <u class="listLink" *ngIf="!isSelected" (click)="onClick()">- You want to choose from the list...?</u>
           <div *ngIf="isSelected" class="form-group">
-            <label for="selected"> Please select the line from here</label>
+            <label for="selected"> - Please select the line from here</label>
             <br>
               <mat-form-field>
                 <!-- <mat-label>List of lines</mat-label> -->

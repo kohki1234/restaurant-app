@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { GurunaviServiceService } from 'src/services/gurunavi-service.service';
 
 export interface Lines {
   value: string;
@@ -14,7 +15,7 @@ export interface Lines {
 export class SearchPageComponent implements OnInit {
   model: any = {};
   isSelected = false;
-  constructor() { }
+  constructor(private gurunavi: GurunaviServiceService) { }
 
 
   foods: Lines[] = [
@@ -27,19 +28,19 @@ export class SearchPageComponent implements OnInit {
     {value: '埼京線', viewValue: '埼京線'},
     {value: '中央本線', viewValue: '中央本線'},
     {value: '湘南新宿ライン', viewValue: '湘南新宿ライン'},
-    {value: '京葉線', viewValue: '京葉線'},
-    {value: '高崎線', viewValue: '高崎線'},
-    {value: '青梅線', viewValue: '青梅線'},
-    {value: '青梅線', viewValue: '青梅線'},
-    {value: '青梅線', viewValue: '青梅線'},
-    {value: '青梅線', viewValue: '青梅線'},
-    {value: '青梅線', viewValue: '青梅線'},
-    {value: '青梅線', viewValue: '青梅線'},
-    {value: '青梅線', viewValue: '青梅線'},
-    {value: '青梅線', viewValue: '青梅線'},
-    {value: '青梅線', viewValue: '青梅線'},
-    {value: '青梅線', viewValue: '青梅線'},
-    {value: '青梅線', viewValue: '青梅線'},
+    // {value: '京葉線', viewValue: '京葉線'},
+    // {value: '高崎線', viewValue: '高崎線'},
+    // {value: '青梅線', viewValue: '青梅線'},
+    // {value: '青梅線', viewValue: '青梅線'},
+    // {value: '青梅線', viewValue: '青梅線'},
+    // {value: '青梅線', viewValue: '青梅線'},
+    // {value: '青梅線', viewValue: '青梅線'},
+    // {value: '青梅線', viewValue: '青梅線'},
+    // {value: '青梅線', viewValue: '青梅線'},
+    // {value: '青梅線', viewValue: '青梅線'},
+    // {value: '青梅線', viewValue: '青梅線'},
+    // {value: '青梅線', viewValue: '青梅線'},
+    // {value: '青梅線', viewValue: '青梅線'},
   ];
 
   ngOnInit() {
@@ -51,8 +52,13 @@ export class SearchPageComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     this.model = '';
-    console.log(form.value);
+    console.log(form.value.line);
     // Form.value
+
+    this.gurunavi.getSearchResult(form.value.line)
+    .subscribe((data) => {
+      console.log(data);
+    });
   }
 
 }

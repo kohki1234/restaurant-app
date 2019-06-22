@@ -7,6 +7,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import {MatSelectModule} from '@angular/material/select';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     FormsModule,
     MatSelectModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: '',
