@@ -13,7 +13,7 @@
   <div>
 
       <form (ngSubmit)="onSubmit(lineForm)" #lineForm="ngForm">
-          <div class="form-group">
+          <!-- <div class="form-group">
               <label for="line"> - Please enter the line you would like to take? : </label>
               <input type="text" 
               name="line" class="form-control" 
@@ -21,28 +21,41 @@
               [(ngModel)]="model.line"
               required
               >
-           </div>
+           </div> -->
 
-
-
-          <u class="listLink" *ngIf="!isSelected" (click)="onClick()">- You want to choose from the list...?</u>
-          <div *ngIf="isSelected" class="form-group">
-            <label for="selected"> - Please select the line from here</label>
+          <div class="form-group">
+            <label for="selected"> 
+              - Please select the line from here　(such as  南北線、京葉線など, required)
+            </label>
             <br>
               <mat-form-field>
                 <!-- <mat-label>List of lines</mat-label> -->
                 <mat-select name="selected" 
                 
                 id="selected"
-                #line2="ngModel"
+                #selected="ngModel"
                 [(ngModel)]="model.selected"
+                required
                 >
-                  <mat-option *ngFor="let food of foods" [value]="food.value">
-                    {{food.viewValue}}
+                  <mat-option *ngFor="let selected of selecteds" [value]="selected.value">
+                    {{selected.viewValue}}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
           </div>
+
+          <br>
+
+
+          <div class="form-group">
+            <label for="freeWord"> - What is your other preference for the search? : (such as イタリアン、インドカレー、バイキングなど) </label>
+            <input type="text" 
+            name="freeWord" class="form-control" 
+            id="freeWord" #line="ngModel"
+            [(ngModel)]="model.freeWord"
+            
+            >
+         </div>
 
           <br>
           <br>
@@ -50,8 +63,8 @@
 
             <button type="submit" 
             class="btn btn-success" 
-            [disabled]="!lineForm.form.valid">
-            Submit
+            [disabled]="!lineForm.valid">
+            Search
 
           </button>
 
@@ -65,4 +78,29 @@
 
 <hr>
 
+  <div>
+    <h2 >Result Preview</h2>
+    <!-- <li *ngFor="let name of this.searchedRestaurantName;">
+      {{name}}
+      {{address}}
+    </li>
+  </div> -->
+  
+<div>
+    <li *ngFor="let key of Object.keys(sampleObj)">
+        Restaurant Name : {{sampleObj[key].name}}
+        <br>
+        Restaurant Address : {{sampleObj[key].address}}
+
+        <br>
+        <a href="{{sampleObj[key].url}}"> {{sampleObj[key].url}} </a>
+        <!-- Restaurant URL : {{sampleObj[key].url}} -->
+
+        <br>
+        Nearest Station : {{sampleObj[key].station}}
+
+        <br>
+        <br>
+
+</div>
 

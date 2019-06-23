@@ -15,10 +15,17 @@ export interface Lines {
 export class SearchPageComponent implements OnInit {
   model: any = {};
   isSelected = false;
+  formSubmitted = false;
+  searchedRestaurantName = [];
+  searchedRestaurantAddress = [];
+
+  Object = Object;
+  sampleObj = [];
+
   constructor(private gurunavi: GurunaviServiceService) { }
 
 
-  foods: Lines[] = [
+  selecteds: Lines[] = [
     {value: '山手線', viewValue: '山手線'},
     {value: '総武線', viewValue: '総武線'},
     {value: '青梅線', viewValue: '青梅線'},
@@ -28,19 +35,19 @@ export class SearchPageComponent implements OnInit {
     {value: '埼京線', viewValue: '埼京線'},
     {value: '中央本線', viewValue: '中央本線'},
     {value: '湘南新宿ライン', viewValue: '湘南新宿ライン'},
-    // {value: '京葉線', viewValue: '京葉線'},
-    // {value: '高崎線', viewValue: '高崎線'},
-    // {value: '青梅線', viewValue: '青梅線'},
-    // {value: '青梅線', viewValue: '青梅線'},
-    // {value: '青梅線', viewValue: '青梅線'},
-    // {value: '青梅線', viewValue: '青梅線'},
-    // {value: '青梅線', viewValue: '青梅線'},
-    // {value: '青梅線', viewValue: '青梅線'},
-    // {value: '青梅線', viewValue: '青梅線'},
-    // {value: '青梅線', viewValue: '青梅線'},
-    // {value: '青梅線', viewValue: '青梅線'},
-    // {value: '青梅線', viewValue: '青梅線'},
-    // {value: '青梅線', viewValue: '青梅線'},
+    {value: '京葉線', viewValue: '京葉線'},
+    {value: '新宿線', viewValue: '新宿線'},
+    {value: '池袋線', viewValue: '池袋線'},
+    {value: '丸ノ内線', viewValue: '丸ノ内線'},
+    {value: '有楽町線', viewValue: '有楽町線'},
+    {value: '日比谷線', viewValue: '青梅線'},
+    {value: '千代田線', viewValue: '千代田線'},
+    {value: '南北線', viewValue: '南北線'},
+    {value: '東西線', viewValue: '東西線'},
+    {value: '副都心線', viewValue: '副都心線'},
+    {value: '半蔵門線', viewValue: '半蔵門線'},
+    {value: '青梅線', viewValue: '青梅線'},
+    {value: '青梅線', viewValue: '青梅線'},
   ];
 
   ngOnInit() {
@@ -51,13 +58,68 @@ export class SearchPageComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    this.model = '';
-    console.log(form.value.line);
+    this.formSubmitted = !this.formSubmitted;
+    // If you want to delete after the search
+    // this.model = {};
+
+    const lineValue = form.value.line;
+    const selectedValue = form.value.selected;
+    let freeWord = form.value.freeWord;
+
+    if (freeWord === undefined) {
+      freeWord = ' ';
+    }
+
+    // console.log(form.value.line);
+    console.log('駅名：　' + form.value.selected);
+    console.log('フリーワード：　' + form.value.freeWord);
     // Form.value
 
-    this.gurunavi.getSearchResult(form.value.line)
+
+    this.gurunavi.getSearchResult(selectedValue + ',' + freeWord )
     .subscribe((data) => {
-      console.log(data);
+
+      this.sampleObj = [];
+
+      // tslint:disable-next-line:no-string-literal
+      const rests = data['rest'];
+      console.log(rests);
+
+      // tslint:disable-next-line:no-string-literal
+      let restaurantName = rests['name'];
+      // tslint:disable-next-line:no-string-literal
+      let restaurantAddress = rests['address'];
+      // tslint:disable-next-line:no-string-literal
+      let restaurantUrl = rests['url'];
+      let nearestStation = '';
+
+
+      // tslint:disable-next-line:prefer-for-of
+      for (let index = 0; index < rests.length; index++) {
+        // const element = rest[index];
+        // tslint:disable-next-line:no-string-literal
+        restaurantName = rests[index]['name'];
+        // tslint:disable-next-line:no-string-literal
+        restaurantAddress = rests[index]['address'];
+        // tslint:disable-next-line:no-string-literal
+        restaurantUrl = rests[index]['url'];
+        // tslint:disable-next-line:no-string-literal
+        nearestStation = rests[index]['access']['station'];
+ 
+        console.log('レストラン名　' + restaurantName);
+        console.log('住所　' + restaurantAddress); // show all the result
+
+        // console.log(this.searchedRestaurantName);
+
+        this.sampleObj.push({
+          name : restaurantName,
+          address : restaurantAddress,
+          url: restaurantUrl,
+          station : nearestStation
+      });
+      }
+
+      // console.log(data);
     });
   }
 
