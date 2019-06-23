@@ -60,6 +60,9 @@ export class SearchPageComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     this.formSubmitted = !this.formSubmitted;
+    // tslint:disable-next-line:no-unused-expression
+    this.errorMessage = '';
+    this.sampleObj = [];
     // If you want to delete after the search
     // this.model = {};
 
@@ -79,9 +82,6 @@ export class SearchPageComponent implements OnInit {
 
     this.gurunavi.getSearchResult(selectedValue + ',' + freeWord )
     .subscribe((data) => {
-
-      this.sampleObj = [];
-
       // tslint:disable-next-line:no-string-literal
       const rests = data['rest'];
       console.log(rests);
@@ -121,7 +121,7 @@ export class SearchPageComponent implements OnInit {
 
       // console.log(data);
     }, (error) => {
-      this.sampleObj = [];
+
       console.log(error);
 
       this.errorMessage = 'There might be no result or There was something went wrong... You can try again later or try different search';
