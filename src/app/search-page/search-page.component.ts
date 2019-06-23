@@ -18,6 +18,7 @@ export class SearchPageComponent implements OnInit {
   formSubmitted = false;
   searchedRestaurantName = [];
   searchedRestaurantAddress = [];
+  errorMessage = '';
 
   Object = Object;
   sampleObj = [];
@@ -105,7 +106,6 @@ export class SearchPageComponent implements OnInit {
         restaurantUrl = rests[index]['url'];
         // tslint:disable-next-line:no-string-literal
         nearestStation = rests[index]['access']['station'];
- 
         console.log('レストラン名　' + restaurantName);
         console.log('住所　' + restaurantAddress); // show all the result
 
@@ -120,7 +120,12 @@ export class SearchPageComponent implements OnInit {
       }
 
       // console.log(data);
-    });
+    }, (error) => {
+      this.sampleObj = [];
+      console.log(error);
+
+      this.errorMessage = 'There might be no result or There was something went wrong... You can try again later or try different search';
+    } );
   }
 
 }
