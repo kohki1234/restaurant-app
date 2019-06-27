@@ -29,7 +29,7 @@ export class SearchPageComponent implements OnInit {
     lng = 139.784092;
     lat2 = 35.695470;
     lng2 = 139.796942;
-    
+
     markers: Marker[] = [
       {
       lat: 35.699624,
