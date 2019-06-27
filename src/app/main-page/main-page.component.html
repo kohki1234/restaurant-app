@@ -18,7 +18,7 @@
 
  <div class="container">
    <div class="row">
-      <div class="col">
+      <div [class]="textCol">
             <h3>Step.1 Search restaurant as you like </h3>
             You may filter the line name and the app will show you the search result.
             <br>
@@ -44,7 +44,7 @@
       </div>
 
       <div class="row">
-            <div class="col">
+            <div [class]="textCol">
 
                   <h3> Step.2 Utilize map with your search </h3>
                   Also, I integrated Google map with API.
@@ -71,9 +71,9 @@
                   alt="image not found">
             </div>
 
-            <div class="row">
-                  <div class="col">
-                        <h3> Step.3 Enjoy yummy foods !!!  </h3>
+          <div class="row">
+                  <div [class]="textCol">
+                        <h3>  Step.3 Enjoy yummy foods !!!  </h3>
                         Hope you will enjoy this tool!
                         <br>
                         You can search various restaurant using this tool and 
@@ -84,8 +84,16 @@
                         <br>
                   
                         If you like this app, please feel free to refer to your friends :)
-                  
+                     
                         <br>
+                        <br>
+
+                        <a routerLink="/search">
+                           <button class="btn">
+                                 I would love to expore!!
+                           </button>
+                        </a>
+
                         <br>
                         <br>
                         <br>

@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
+  textCol = 'col';
+
+  clientWidth: number = document.documentElement.clientWidth;
 
   constructor() { }
 
   ngOnInit() {
+    if (this.clientWidth < 375) {
+      this.textCol = 'smallCol';
+    }
   }
+
+
 
 }
