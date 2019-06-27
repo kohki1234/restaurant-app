@@ -24,3 +24,14 @@ p.explanation-text {
     cursor: pointer;
     cursor: hand;
 }
+
+
+
+agm-map {
+    height: 500px;
+    width: 90%;
+  }
+  
+  div.maps {
+    margin-bottom: 50px;
+}

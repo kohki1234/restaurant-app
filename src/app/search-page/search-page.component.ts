@@ -7,14 +7,59 @@ export interface Lines {
   viewValue: string;
 }
 
+export interface Marker {
+  lat: number;
+  lng: number;
+  restaurantName: string;
+  physicalAddress: string;
+  }
+
+
 @Component({
   selector: 'app-search-page',
   templateUrl: './search-page.component.html',
   styleUrls: ['./search-page.component.css']
 })
 export class SearchPageComponent implements OnInit {
+    // google maps zoom level
+    zoom = 12;
+    // Google map API variable
+    title = 'My first AGM project';
+    lat = 35.699624;
+    lng = 139.784092;
+    lat2 = 35.695470;
+    lng2 = 139.796942;
+    
+    markers: Marker[] = [
+      {
+      lat: 35.699624,
+      lng: 139.784092,
+      restaurantName: 'サパナ',
+      physicalAddress: '東京都文京区千駄木102202',
+      },
+      {
+        lat: 35.695470,
+        lng: 139.796942,
+        restaurantName: '小僧寿し',
+        physicalAddress: '東京都台東区まるまる4-2-5',
+      },
+      {
+        lat: 35.731161,
+        lng: 139.706486,
+        restaurantName: 'すた丼',
+        physicalAddress: '東京都練馬区まるまる8-3-5',
+      },
+      {
+        lat: 35.626349,
+        lng: 139.722472,
+        restaurantName: 'Shake Sack',
+        physicalAddress: '東京都港区5y-3-5',
+      }
+    ];
+
   model: any = {};
   isSelected = false;
+  isSearched = false;
   formSubmitted = false;
   searchedRestaurantName = [];
   searchedRestaurantAddress = [];
@@ -82,6 +127,7 @@ export class SearchPageComponent implements OnInit {
 
     this.gurunavi.getSearchResult(selectedValue + ',' + freeWord )
     .subscribe((data) => {
+      this.isSearched = !this.isSearched;
       // tslint:disable-next-line:no-string-literal
       const rests = data['rest'];
       console.log(rests);
@@ -129,3 +175,4 @@ export class SearchPageComponent implements OnInit {
   }
 
 }
+

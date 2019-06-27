@@ -8,13 +8,16 @@ import { SearchPageComponent } from './search-page/search-page.component';
 import {MatSelectModule} from '@angular/material/select';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
+import { GooglemapComponent } from './googlemap/googlemap.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    GooglemapComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSelectModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyAgXwGzTYmQoigtCixU2opWIDpYMOQ5_xs'}),
     RouterModule.forRoot([
       {
         path: '',

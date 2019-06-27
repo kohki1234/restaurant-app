@@ -1,7 +1,7 @@
 
 
 
-<h2 class="head_test">Restraunt Search Tool</h2>
+<h1 class="head_test">Restraunt Search Tool</h1>
 
 
 <p class="explanation-text">
@@ -60,7 +60,6 @@
           <br>
           <br>
 
-
             <button type="submit" 
             class="btn btn-success" 
             [disabled]="!lineForm.valid">
@@ -70,7 +69,7 @@
 
       </form>
 
-
+      <br>
       <a routerLink="/">Back to the previous page</a>
     
   </div>
@@ -80,6 +79,9 @@
 
   <div>
     <h2 >Result Preview</h2>
+    <div *ngIf="!isSearched">Result will be shown here :)</div>
+    <br *ngIf="!isSearched">
+
     <!-- <li *ngFor="let name of this.searchedRestaurantName;">
       {{name}}
       {{address}}
@@ -107,5 +109,29 @@
 
 </div>
 
-{{this.errorMessage}}
+<div class="errorMessage">
+  {{this.errorMessage}}
+</div>
 
+
+
+<hr>
+
+<div class="maps"> 
+  
+    <h2 >Google Map View</h2>
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+        <agm-marker *ngFor="let m of markers; let i = index"
+        [latitude]="m.lat"
+        [longitude]="m.lng"
+        [label]="m.restaurantName"
+        >
+        <agm-info-window>
+            <strong>{{m.restaurantName}}</strong>
+            <br>
+            <strong>{{m.physicalAddress}}</strong>
+          </agm-info-window>
+      </agm-marker>
+      </agm-map>
+
+</div>
