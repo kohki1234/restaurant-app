@@ -26,7 +26,19 @@ p.explanation-text {
 }
 
 
+/*  Search Box Styling */
+.searchBox{
+    width: 85%;
+    margin: 1em 0;
+    padding: 15px;
+    background-color: #E3DFDE;
+    box-shadow: 0 3px 4px #8d95a1;
+  }
+  
 
+
+
+/* Google Map Styling */
 agm-map {
     height: 500px;
     width: 90%;

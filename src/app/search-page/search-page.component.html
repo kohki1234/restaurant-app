@@ -10,7 +10,7 @@
   ** Please note that you can only search Tokyo area!
 </p>
 
-  <div>
+  <div class="searchBox">
 
       <form (ngSubmit)="onSubmit(lineForm)" #lineForm="ngForm">
           <!-- <div class="form-group">
@@ -149,6 +149,8 @@
             <b>{{m.name}}</b>
             <br>
             <strong>{{m.address}}</strong>
+            <br>
+            <a href="{{m.url}}">{{m.url}}</a>
             <br>
             <br>
             <img width="150px" height="100px" src="{{m.image}}" alt="not available">

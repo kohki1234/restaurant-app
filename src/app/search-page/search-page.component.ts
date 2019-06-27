@@ -70,28 +70,47 @@ export class SearchPageComponent implements OnInit {
 
 
   selecteds: Lines[] = [
-    {value: '山手線', viewValue: '山手線'},
-    {value: '総武線', viewValue: '総武線'},
-    {value: '青梅線', viewValue: '青梅線'},
-    {value: '中央線', viewValue: '中央線'},
-    {value: '京浜東北線', viewValue: '京浜東北線'},
-    {value: '南武線', viewValue: '南武線'},
-    {value: '埼京線', viewValue: '埼京線'},
-    {value: '中央本線', viewValue: '中央本線'},
-    {value: '湘南新宿ライン', viewValue: '湘南新宿ライン'},
-    {value: '京葉線', viewValue: '京葉線'},
-    {value: '新宿線', viewValue: '新宿線'},
-    {value: '池袋線', viewValue: '池袋線'},
-    {value: '丸ノ内線', viewValue: '丸ノ内線'},
-    {value: '有楽町線', viewValue: '有楽町線'},
-    {value: '日比谷線', viewValue: '青梅線'},
-    {value: '千代田線', viewValue: '千代田線'},
-    {value: '南北線', viewValue: '南北線'},
-    {value: '東西線', viewValue: '東西線'},
-    {value: '副都心線', viewValue: '副都心線'},
-    {value: '半蔵門線', viewValue: '半蔵門線'},
-    {value: '青梅線', viewValue: '青梅線'},
-    {value: '青梅線', viewValue: '青梅線'},
+    // JR
+    {value: '山手線', viewValue: 'JR山手線'},
+    {value: '総武線', viewValue: 'JR総武線'},
+    {value: '中央線', viewValue: 'JR中央線'},
+    {value: '京浜東北線', viewValue: 'JR京浜東北線'},
+    {value: '埼京線', viewValue: 'JR埼京線'},
+    {value: '中央本線', viewValue: 'JR中央本線'},
+    {value: '湘南新宿ライン', viewValue: 'JR湘南新宿ライン'},
+    {value: '京葉線', viewValue: 'JR京葉線'},
+
+    // 東京メトロ
+    {value: '銀座線', viewValue: '地下鉄銀座線'},
+    {value: '池袋線', viewValue: '地下鉄池袋線'},
+    {value: '丸ノ内線', viewValue: '地下鉄丸ノ内線'},
+    {value: '有楽町線', viewValue: '地下鉄有楽町線'},
+    {value: '日比谷線', viewValue: '地下鉄日比谷線'},
+    {value: '千代田線', viewValue: '地下鉄千代田線'},
+    {value: '南北線', viewValue: '地下鉄南北線'},
+    {value: '東西線', viewValue: '地下鉄東西線'},
+    {value: '副都心線', viewValue: '地下鉄副都心線'},
+
+    // 都営
+    {value: '浅草線', viewValue: '都営浅草線'},
+    {value: '三田線', viewValue: '都営三田線'},
+    {value: '新宿線', viewValue: '都営新宿線'},
+    {value: '大江戸線', viewValue: '都営大江戸線'},
+
+    // 私鉄
+    {value: '小田急線', viewValue: '小田急線'},
+    {value: '京王線', viewValue: '京王線'},
+    {value: '京急線', viewValue: '京急線'},
+    {value: '京成線', viewValue: '京成線'},
+    {value: '西武線', viewValue: '西武線'},
+    {value: '東急線', viewValue: '東急線'},
+    {value: 'りんかい線', viewValue: 'りんかい線'},
+    {value: '東京モノレール', viewValue: '東京モノレール'},
+    {value: '東武鉄道', viewValue: '東武鉄道'},
+    {value: 'ゆりかもめ', viewValue: 'ゆりかもめ'},
+
+
+
   ];
 
   ngOnInit() {
