@@ -9,6 +9,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { AgmCoreModule } from '@agm/core';
     MatSelectModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatGridListModule,
     AgmCoreModule.forRoot({apiKey: 'AIzaSyAgXwGzTYmQoigtCixU2opWIDpYMOQ5_xs'}),
     RouterModule.forRoot([
       {

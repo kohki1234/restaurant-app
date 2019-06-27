@@ -1,4 +1,18 @@
 
+
+/* h1::after {
+    position: absolute;
+    top: 50%;
+    left:0.7em;
+    transform:translateY(-50%);
+    content: '';
+    width: 8px;
+    height:8px;
+    border: solid 3px white;
+    border-radius:100%;
+} */
+
+
 .form-control {
     width: 50%;
     
@@ -10,8 +24,15 @@ p.explanation-text {
 
 
 .head_test {
+    position: relative;
+    color: white;
+    padding-left: 15px;
+    padding-top: 10px;
+    background-color: #446689;
+    border-radius: 5px;
+    font-size: 45px;
+
     margin:  0;                 /* デフォルトCSS打ち消し */
-    font-size: 35px;       /* 文字サイズ指定 */
     border-bottom: solid 3px;   /* 線指定 */
     padding-bottom:  5px;       /* 余白指定 */
     margin-bottom: 15px;        /* 周りの余白指定 */
