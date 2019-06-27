@@ -117,7 +117,7 @@
 
 <hr>
 
-<div class="maps"> 
+<!-- <div class="maps"> 
   
     <h2 >Google Map View</h2>
     <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
@@ -130,6 +130,28 @@
             <strong>{{m.restaurantName}}</strong>
             <br>
             <strong>{{m.physicalAddress}}</strong>
+          </agm-info-window>
+      </agm-marker>
+      </agm-map>
+
+</div> -->
+
+<div class="maps"> 
+  
+    <h2 >Google Map View</h2>
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+        <agm-marker *ngFor="let m of sampleObj; let i = index"
+        [latitude]="m.lat"
+        [longitude]="m.lng"
+        [label]="m.name"
+        >
+        <agm-info-window>
+            <b>{{m.name}}</b>
+            <br>
+            <strong>{{m.address}}</strong>
+            <br>
+            <br>
+            <img width="150px" height="100px" src="{{m.image}}" alt="not available">
           </agm-info-window>
       </agm-marker>
       </agm-map>

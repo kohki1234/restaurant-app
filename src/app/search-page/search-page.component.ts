@@ -27,8 +27,6 @@ export class SearchPageComponent implements OnInit {
     title = 'My first AGM project';
     lat = 35.699624;
     lng = 139.784092;
-    lat2 = 35.695470;
-    lng2 = 139.796942;
 
     markers: Marker[] = [
       {
@@ -132,36 +130,43 @@ export class SearchPageComponent implements OnInit {
       const rests = data['rest'];
       console.log(rests);
 
-      // tslint:disable-next-line:no-string-literal
-      let restaurantName = rests['name'];
-      // tslint:disable-next-line:no-string-literal
-      let restaurantAddress = rests['address'];
-      // tslint:disable-next-line:no-string-literal
-      let restaurantUrl = rests['url'];
+      // variables for interface Lines
+      let restaurantName = '';
+      let restaurantAddress = '';
+      let restaurantUrl = '';
       let nearestStation = '';
+      let lng = '';
+      let lat = '';
+      let imageUrl = '';
 
 
       // tslint:disable-next-line:prefer-for-of
       for (let index = 0; index < rests.length; index++) {
         // const element = rest[index];
-        // tslint:disable-next-line:no-string-literal
-        restaurantName = rests[index]['name'];
-        // tslint:disable-next-line:no-string-literal
-        restaurantAddress = rests[index]['address'];
-        // tslint:disable-next-line:no-string-literal
-        restaurantUrl = rests[index]['url'];
-        // tslint:disable-next-line:no-string-literal
-        nearestStation = rests[index]['access']['station'];
+        restaurantName = rests[index].name;
+        restaurantAddress = rests[index].address;
+        restaurantUrl = rests[index].url;
+        nearestStation = rests[index].access.station;
+        imageUrl = rests[index].image_url.shop_image1;
+
+        lng = rests[index].longitude;
+        lat = rests[index].latitude;
+
+        // For debugging
         console.log('レストラン名　' + restaurantName);
         console.log('住所　' + restaurantAddress); // show all the result
-
+        console.log('longtitude ' + lng); // show all the result
+        console.log('latitude ' + lat); // show all the result
         // console.log(this.searchedRestaurantName);
 
         this.sampleObj.push({
           name : restaurantName,
           address : restaurantAddress,
           url: restaurantUrl,
-          station : nearestStation
+          station : nearestStation,
+          image : imageUrl,
+          lng,
+          lat
       });
       }
 
