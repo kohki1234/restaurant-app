@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
+  // This variable is to change css class for image pics
   textCol = 'col';
-
   clientWidth: number = document.documentElement.clientWidth;
 
   constructor() { }
