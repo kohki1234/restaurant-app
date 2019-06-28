@@ -78,7 +78,7 @@ agm-map {
 @media (max-width: 380px) {
     .head_test {
         font-size: 35px;
-        width: 95%;
+        width: 100%;
     }
 
     p.explanation-text {
@@ -111,5 +111,10 @@ agm-map {
       
       div.maps {
         margin-bottom: 50px;
+    }
+
+    body {
+        padding-left: 15px;
+        padding-right: 10px;
     }
  }

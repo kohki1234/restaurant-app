@@ -6,8 +6,10 @@
 
 <p class="explanation-text">
   You will be able to search the spefic line and list up the restaurant on the line.
+  <br>こちらから希望の路線に沿ったレストランを検索出来ます。
   <br>
-  ** Please note that you can only search Tokyo area!
+  <br>** Please note that you can only search Tokyo area!
+  <br>注意：このツールは東京の首都圏エリアのみが検索出来るようになっています。
 </p>
 
   <div class="searchBox">
@@ -26,6 +28,7 @@
           <div class="form-group">
             <label for="selected"> 
               - Please select the line from here　(such as  南北線、京葉線など, required)
+              <br>希望の路線を洗濯してください(必須：南北線、京葉線など)
             </label>
             <br>
               <mat-form-field>
@@ -48,7 +51,10 @@
 
 
           <div class="form-group">
-            <label for="freeWord"> - What is your other preference for the search? : (such as イタリアン、インドカレー、バイキングなど) </label>
+            <label for="freeWord">
+               - What is your other preference for the search? : (such as イタリアン、インドカレー、バイキングなど) 
+               <br> レストランの種類などで他にご希望はありますか？　(例 : イタリアン、インドカレー、バイキング、食べ放題など) 
+              </label>
             <input type="text" 
             name="freeWord" class="form-control" 
             id="freeWord" #line="ngModel"

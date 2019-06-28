@@ -4,25 +4,37 @@
           <p>
               Have you ever wondered if you can search some Restaurant according to the metro line?
               <br> Then this is the dream tool which you can do what you want!!
+              <br>
+              <br> レストランを最寄りの路線から検索したいと思ったことはありませんか？　東京は路線が多く、できれば乗り換えをせずに済ませたいですよね。
+              <br> このツールはご希望の路線からレストランを検索できるツールです！
+              <br> <a href="#explanation" class="goLink"><u>詳しい使い方は↓こちら</u></a>
+              
+              
           </p>
           <br>
           <button>
-              <a routerLink="/search">Do you want to explore more...?</a>
+              <a routerLink="/search">
+                Do you want to explore more...?
+                <br>レストラン検索機能を試してみる
+            </a>
           </button>
+          
   
       </div>
   </header>
   <br>
   <br>
   
-  <div class="container">
+  <div class="container" id="explanation">
       <div class="row">
           <div [class]="textCol">
               <h3>Step.1 Search restaurant as you like </h3> You may filter the line name and the app will show you the search result.
               <br> Let's say you want to search Restaurant within 南北線, you can select the line from the list, and then you can find all the restaurant!
 
               <br> I prepared some parameter you can manually add to filter the search result. So play around with it!!
-              <br>
+              <br><br>お好みの路線やレストランの種類からレストランを探す事ができます。例えば南北線沿いのレストランを検索したかったら、
+              南北線を選択して、さらにイタリンアンといった検索ワードで絞り込む事が可能です。
+              
   
           </div>
   
@@ -34,14 +46,11 @@
               <div [class]="textCol">
   
                   <h3> Step.2 Utilize map with your search </h3> Also, I integrated Google map with API.
-                  <br> This is going to be really good freind of you. Because you can not only search restaurant with line, but you can also see all restaurant location in Google map!
-                  <br>
-  
                   <br>
                   <br> You can see beautiful pictures of the restaurant. If you want to visit Guru navi site, you can go there from the link!
                   <br>
-                  <br>
-                  <br>
+                  <br>また、Google Map APIと連携しているので、検索したレストランが地図上に表示されます。
+                  <br>地図上のマーカーをクリックすると、店の詳細や住所、画像が検索されます。また、リンクからぐるなびのページに飛ぶことも可能です。
                   <br>
   
               </div>
@@ -55,16 +64,17 @@
                       <h3>  Step.3 Enjoy yummy foods !!!  </h3> Hope you will enjoy this tool!
                       <br> You can search various restaurant using this tool and hope you will find new way to explore good foods!
                       <br>
-  
-                      <br>
                       <br> If you like this app, please feel free to refer to your friends :)
   
                       <br>
+                      <br> 実際に使ってみたくなりましたか？以下のボタンからお試しください !
+                    
                       <br>
-  
+                      <br>
                       <a routerLink="/search">
                           <button class="btn">
                               I would love to expore!!
+                              <br>レストラン検索機能を試してみる
                           </button>
                       </a>
   
