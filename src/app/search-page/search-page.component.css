@@ -18,6 +18,11 @@
     
 }
 
+a {
+    word-wrap: break-word;
+    width: 95%;
+  }
+
 p.explanation-text {
     font-size: 20px;
 }
@@ -68,3 +73,43 @@ agm-map {
   div.maps {
     margin-bottom: 50px;
 }
+
+
+@media (max-width: 380px) {
+    .head_test {
+        font-size: 35px;
+        width: 95%;
+    }
+
+    p.explanation-text {
+        font-size: 15px;
+    }
+
+    div.explanation-text {
+        font-size: 15px;
+        width: 95%;
+    }
+
+    div.searchBox {
+        margin-right: 5px;
+        width: 95%;
+    }
+
+    input.form-control {
+        width: 95%;
+    }
+
+    a {
+        word-wrap: break-word;
+      }
+
+    /* Google Map styling */
+    agm-map {
+        height: 300px;
+        width: 95%;
+      }
+      
+      div.maps {
+        margin-bottom: 50px;
+    }
+ }
