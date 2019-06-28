@@ -35,7 +35,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
         path: 'search',
         component: SearchPageComponent
        }
-    ])
+    ], {scrollPositionRestoration: 'enabled'})
   ],
   providers: [],
   bootstrap: [AppComponent]
